@@ -1,40 +1,120 @@
-// membuat class otomatis -> menggunakan ekstensi dart data class generator untuk 
-// show and run command ->  dart data class generator: generate from class properties
-
 import 'dart:convert';
 
-// pastikan bagian berikut harus benar sebelum membuat otomatis
+// // membuat class otomatis -> menggunakan ekstensi dart data class generator untuk 
+// // show and run command ->  dart data class generator: generate from class properties
+
+// import 'dart:convert';
+
+// // pastikan bagian berikut harus benar sebelum membuat otomatis
+// class User {
+//   final int id;
+//   final String username;
+//   final String email;
+//   final String password;
+
+// // dan 
+
+//   User({
+//     required this.id, 
+//     required this.username, 
+//     required this.email, 
+//     required this.password});
+// //
+
+
+//   User copyWith({
+//     int? id,
+//     String? username,
+//     String? email,
+//     String? password,
+//   }) {
+//     return User(
+//       id: id ?? this.id,
+//       username: username ?? this.username,
+//       email: email ?? this.email,
+//       password: password ?? this.password,
+//     );
+//   }
+
+//   Map<String, dynamic> toMap() {
+//     return {
+//       'id': id,
+//       'username': username,
+//       'email': email,
+//       'password': password,
+//     };
+//   }
+
+//   factory User.fromMap(Map<String, dynamic> map) {
+//     return User(
+//       id: map['id']?.toInt() ?? 0,
+//       username: map['username'] ?? '',
+//       email: map['email'] ?? '',
+//       password: map['password'] ?? '',
+//     );
+//   }
+
+//   String toJson() => json.encode(toMap());
+
+//   factory User.fromJson(String source) => User.fromMap(json.decode(source));
+
+//   @override
+//   String toString() {
+//     return 'User(id: $id, username: $username, email: $email, password: $password)';
+//   }
+
+//   @override
+//   bool operator ==(Object other) {
+//     if (identical(this, other)) return true;
+  
+//     return other is User &&
+//       other.id == id &&
+//       other.username == username &&
+//       other.email == email &&
+//       other.password == password;
+//   }
+
+//   @override
+//   int get hashCode {
+//     return id.hashCode ^
+//       username.hashCode ^
+//       email.hashCode ^
+//       password.hashCode;
+//   }
+// }
+
+
 class User {
   final int id;
   final String username;
   final String email;
   final String password;
-
-// dan 
+  // constructor
 
   User({
-    required this.id, 
-    required this.username, 
-    required this.email, 
-    required this.password});
-//
+    required this.id,
+    required this.username,
+    required this.email,
+    required this.password,
+  });
 
+  // konstruktor, conversi "dari" atau "ke" json
 
-  User copyWith({
-    int? id,
-    String? username,
-    String? email,
-    String? password,
-  }) {
-    return User(
-      id: id ?? this.id,
-      username: username ?? this.username,
-      email: email ?? this.email,
-      password: password ?? this.password,
-    );
-  }
+  // User copyWith({
+  //   int? id,
+  //   String? username,
+  //   String? email,
+  //   String? password,
+  // }) {
+  //   return User(
+  //     id: id ?? this.id,
+  //     username: username ?? this.username,
+  //     email: email ?? this.email,
+  //     password: password ?? this.password,
+  //   );
+  // }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toMap() { // toMap itu dari object ke map/json
     return {
       'id': id,
       'username': username,
@@ -52,31 +132,33 @@ class User {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  // String toJson() => json.encode(toMap());
 
-  factory User.fromJson(String source) => User.fromMap(json.decode(source));
+  // factory User.fromJson(String source) => User.fromMap(json.decode(source));
 
   @override
   String toString() {
     return 'User(id: $id, username: $username, email: $email, password: $password)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+  // @override
+  // bool operator ==(Object other) {
+  //   if (identical(this, other)) return true;
   
-    return other is User &&
-      other.id == id &&
-      other.username == username &&
-      other.email == email &&
-      other.password == password;
-  }
+  //   return other is User &&
+  //     other.id == id &&
+  //     other.username == username &&
+  //     other.email == email &&
+  //     other.password == password;
+  // }
 
-  @override
-  int get hashCode {
-    return id.hashCode ^
-      username.hashCode ^
-      email.hashCode ^
-      password.hashCode;
-  }
+  // @override
+  // int get hashCode {
+  //   return id.hashCode ^
+  //     username.hashCode ^
+  //     email.hashCode ^
+  //     password.hashCode;
+  // }
 }
+
+// yang kita butuhkan toMap, fromMap, dan toString saja terlebih dahulu
